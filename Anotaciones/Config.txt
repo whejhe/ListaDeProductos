@@ -1,0 +1,23 @@
+Instalacion Previa: Node, git, Visual studio, npm
+
+Variable de Entorno Android Estudio
+ANDROID_HOME 
+C:\Users\noBody\AppData\Local\Android\Sdk
+
+path:
+C:\Users\noBody\AppData\Local\Android\Sdk\platforms
+C:\Users\noBody\AppData\Local\Android\Sdk\platform-tools
+
+Instalar Expo de manera Global:
+npm install -g expo-cli
+
+Crear Proyecto:
+npx create-expo-app@latest ListaDeProductos --template blank
+
+Habilitar para web:
+npx expo install react-dom react-native-web @expo/metro-runtime
+
+Comenzar Proyecto:
+npm start
+
+
