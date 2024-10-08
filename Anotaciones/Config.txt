@@ -3,12 +3,11 @@ Instalacion Previa: Node, git, Visual studio, npm
 Variable de Entorno Android Estudio
 ANDROID_HOME 
 C:\Users\noBody\AppData\Local\Android\Sdk
-
 path:
 C:\Users\noBody\AppData\Local\Android\Sdk\platforms
 C:\Users\noBody\AppData\Local\Android\Sdk\platform-tools
 
-Instalar Expo de manera Global:
+Instalar Expo de manera Global desde cmd:
 npm install -g expo-cli
 
 Crear Proyecto:
@@ -20,4 +19,16 @@ npx expo install react-dom react-native-web @expo/metro-runtime
 Comenzar Proyecto:
 npm start
 
+Para estilos:
+npx expo lint
 
+npx expo install -- --save-dev prettier eslint-config-prettier eslint-plugin-prettier
+
+en .eslintrc.js
+module.exports = {
+  extends: ['expo', 'prettier'],
+  plugins: ['prettier'],
+  rules: {
+    'prettier/prettier': 'error',
+  },
+};
