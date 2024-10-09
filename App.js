@@ -1,6 +1,13 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState, useEffect } from "react";
-import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
+import {
+  Image,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 // import { Image } from "react-native-web";
 
 // import icon from'./assets/icon.png';
@@ -23,22 +30,24 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="light" />
-      <ScrollView>
-        {producto.map((producto) => (
-          <View key={producto.id} style={styles.imageProducto}>
-            <Image
-              style={styles.image}
-              resizeMode="contain"
-              source={{
-                uri: producto.image,
-              }}
-            />
-            <Text>{producto.title}</Text>
-            <Text>{producto.price}</Text>
-            <Text>{producto.category}</Text>
-          </View>
-        ))}
-      </ScrollView>
+      <SafeAreaView style={styles.safeArea}>
+        <ScrollView contentContainerStyle={styles.scrollContent}>
+          {producto.map((producto) => (
+            <View key={producto.id} style={styles.imageProducto}>
+              <Image
+                style={styles.image}
+                resizeMode="contain"
+                source={{
+                  uri: producto.image,
+                }}
+              />
+              <Text>{producto.title}</Text>
+              <Text>{producto.price}</Text>
+              <Text>{producto.category}</Text>
+            </View>
+          ))}
+        </ScrollView>
+      </SafeAreaView>
       {/* <Image source={icon} style={{ width: 100, height: 100, resizeMode: 'contain' }} /> */}
       <Text>Open up App.js to start working on your app!</Text>
       {/* <Button title="Pulsa aqui" onPress={() => alert('Hola que tal')}/> */}
@@ -83,7 +92,14 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   image: {
-    width: 100, // Tamaño explícito de la imagen
-    height: 100, // Tamaño explícito de la imagen
+    width: 100,
+    height: 100,
+  },
+  scrollContent: {
+    paddingBottom: 20,
+  },
+  safeArea: {
+    flex: 1,
+    margin: 15,
   },
 });

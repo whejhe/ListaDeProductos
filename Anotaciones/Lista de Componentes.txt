@@ -25,6 +25,10 @@ Componentes de React Native
         que el tamaño de la pantalla.
         Nota: Recomendado solo para listas staticas o no muy grandes, scrollview renderiza
         todos los elementos al mismo tiempo lo que puede causar cuelgues o lentitud en las paginas.
+    SafeAreaView:
+        Garantiza que el contenido de la aplicación no se superponga con áreas sensibles de 
+        la pantalla, como el notch, las barras de estado, las barras de navegación o 
+        los bordes redondeados de algunos dispositivos.
     Image:
         Componente para mostrar imágenes. Soporta tanto imágenes locales como remotas 
         (a través de URLs).
