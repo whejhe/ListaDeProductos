@@ -46,9 +46,9 @@ export default function App() {
                   uri: producto.image,
                 }}
               />
-              <Text>{producto.title}</Text>
-              <Text>{producto.price}</Text>
-              <Text>{producto.category}</Text>
+              <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 16 }}>{producto.title}</Text>
+              <Text style={{ color: "#fff" }}>{producto.price}€</Text>
+              <Text style={{ color: "#fff" }}>{producto.category}</Text>
             </View>
           ))}
         </ScrollView>
@@ -87,9 +87,11 @@ const styles = StyleSheet.create({
     width: 350,
     height: 250,
     resizeMode: "contain",
-    backgroundColor: "#fff",
+    backgroundColor: "black",
     textAlign: "center",
     // borderRadius: 100,
+    borderWidth: 2,
+    borderColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
     margin: 10,
@@ -97,8 +99,8 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   image: {
-    width: 100,
-    height: 100,
+    width: 150,
+    height: 150,
   },
   scrollContent: {
     paddingBottom: 20,
