@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-// import { Image } from "react-native-web";
+import FichaProducto from "./src/components/fichaProducto";
 
 // import icon from'./assets/icon.png';
 
@@ -45,33 +45,20 @@ export default function App() {
                 source={{
                   uri: producto.image,
                 }}
+                onPress={() => {
+                  navigation.navigate("FichaProducto", { producto });
+                }}
               />
-              <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 16 }}>{producto.title}</Text>
+              <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 16 }}>
+                {producto.title}
+              </Text>
               <Text style={{ color: "#fff" }}>{producto.price}€</Text>
               <Text style={{ color: "#fff" }}>{producto.category}</Text>
             </View>
           ))}
         </ScrollView>
       </SafeAreaView>
-      {/* <Image source={icon} style={{ width: 100, height: 100, resizeMode: 'contain' }} /> */}
       <Text>Open up App.js to start working on your app!</Text>
-      {/* <Button title="Pulsa aqui" onPress={() => alert('Hola que tal')}/> */}
-      {/* boton personalizado */}
-      {/* <Pressable
-        underlayColor={"#fff"}
-        style={{
-          width: 100,
-          height: 100,
-          backgroundColor: "#fff",
-          borderRadius: 100,
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        {({ pressed }) => (
-          <Text style={{ color: pressed ? "#000" : "#fff" }}>Hola</Text>
-        )}
-      </Pressable> */}
     </View>
   );
 }
