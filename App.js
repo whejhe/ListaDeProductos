@@ -8,9 +8,14 @@ import {
   Text,
   View,
 } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 // import { Image } from "react-native-web";
 
 // import icon from'./assets/icon.png';
+
+// Configuración de navegación
+const Stack = createStackNavigator();
 
 export default function App() {
   const [producto, setListaProductos] = useState([]);

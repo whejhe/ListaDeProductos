@@ -32,3 +32,7 @@ module.exports = {
     'prettier/prettier': 'error',
   },
 };
+
+Dependencias para habilitar la navegacion entre paginas:
+npm install @react-navigation/native @react-navigation/stack
+npm install react-native-screens react-native-safe-area-context
