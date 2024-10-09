@@ -1,31 +1,25 @@
+// src/components/fichaProducto.js
 // Modal para ver la ficha de un producto
-import React, { useState } from "react";
-import { View, Text, Image, Button, Modal } from "react-native";
-import { Pressable, ScrollView } from "react-native-gesture-handler";
+import React, { useState } from 'react';
+import { View, Text, Image, Modal } from 'react-native';
 
 export default function FichaProducto({ route, navigation }) {
     const { producto } = route.params;
+    const [modalVisible, setModalVisible] = useState(false);
+
     return (
-        <ScrollView>
-            <View style={styles.container}>
-                <Image
-                    style={styles.image}
-                    resizeMode="contain"
-                    source={{ uri: producto.image }}
-                />
-                <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 16 }}>
-                    {producto.title}
-                </Text>
-                <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 16 }}>
-                    {producto.description}
-                </Text>
-                <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 16 }}>
-                    {producto.price}
-                </Text>
-            </View>
-            <Pressable>
-                {/* Volver a app.js */}
-            </Pressable>
-        </ScrollView>
+        <View style={styles.container}>
+            <Modal
+                visible={modalVisible}
+                onRequestClose={() => setModalVisible(false)}
+            >
+                <View>
+                    <Image source={{ uri: producto.image }} />
+                    <Text>{producto.title}</Text>
+                    <Text>{producto.description}</Text>
+                    <Text>{producto.price}</Text>
+                </View>
+            </Modal>
+        </View>
     );
 }

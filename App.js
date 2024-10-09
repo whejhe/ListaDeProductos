@@ -1,7 +1,9 @@
+// App.js
 import { StatusBar } from "expo-status-bar";
 import React, { useState, useEffect } from "react";
 import {
   Image,
+  Pressable,
   SafeAreaView,
   ScrollView,
   StyleSheet,
@@ -11,10 +13,8 @@ import {
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import FichaProducto from "./src/components/fichaProducto";
+import pruebaModal from "./src/components/pruebaModal";
 
-// import icon from'./assets/icon.png';
-
-// Configuración de navegación
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -32,6 +32,8 @@ export default function App() {
     return data;
   };
 
+  const Stack = createStackNavigator();
+
   return (
     <View style={styles.container}>
       <StatusBar style="light" />
@@ -45,20 +47,29 @@ export default function App() {
                 source={{
                   uri: producto.image,
                 }}
-                onPress={() => {
-                  navigation.navigate("FichaProducto", { producto });
-                }}
               />
               <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 16 }}>
                 {producto.title}
               </Text>
               <Text style={{ color: "#fff" }}>{producto.price}€</Text>
               <Text style={{ color: "#fff" }}>{producto.category}</Text>
+              <Pressable
+                style={styles.button}
+                onPress={() => {
+                  navigation.navigate("pruebaModal", { producto });
+                }}
+              >
+                <Text>Abrir</Text>
+              </Pressable>
             </View>
           ))}
         </ScrollView>
       </SafeAreaView>
-      <Text>Open up App.js to start working on your app!</Text>
+
+      {/* <Stack.Navigator>
+        <Stack.Screen name="Home" component={App} />
+        <Stack.Screen name="FichaProducto" component={FichaProducto} />
+      </Stack.Navigator> */}
     </View>
   );
 }
@@ -95,5 +106,10 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
     margin: 15,
+  },
+  button: {
+    backgroundColor: "#fff",
+    padding: 10,
+    borderRadius: 5,
   },
 });
