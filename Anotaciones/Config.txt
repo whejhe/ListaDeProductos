@@ -19,9 +19,9 @@ npx expo install react-dom react-native-web @expo/metro-runtime
 Comenzar Proyecto:
 npm start
 
-Para estilos:
+Para estilos y formato:
 npx expo lint
-
+y
 npx expo install -- --save-dev prettier eslint-config-prettier eslint-plugin-prettier
 
 en .eslintrc.js

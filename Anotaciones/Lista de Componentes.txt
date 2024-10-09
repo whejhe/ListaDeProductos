@@ -14,12 +14,17 @@ Componentes de React Native
     TouchableOpacity:
         Componente que reacciona a toques, y que puede ser estilizado. Se usa a menudo 
         como alternativa más flexible al Button.
+    Pressable:
+        Componete que viene a sustituir a Button y TouchableOpacity, completamente 
+        personalizable.
     FlatList:
         Componente de lista eficiente para renderizar grandes cantidades de datos de 
         manera optimizada.
     ScrollView:
         Contenedor de desplazamiento que permite hacer scroll si el contenido es mayor 
         que el tamaño de la pantalla.
+        Nota: Recomendado solo para listas staticas o no muy grandes, scrollview renderiza
+        todos los elementos al mismo tiempo lo que puede causar cuelgues o lentitud en las paginas.
     Image:
         Componente para mostrar imágenes. Soporta tanto imágenes locales como remotas 
         (a través de URLs).
@@ -32,6 +37,10 @@ Componentes de React Native
 
 Componentes de Expo
 
+    StatusBar:
+        controla la barra de estado del dispositivo, que es la barra que aparece en la 
+        parte superior de la pantalla y muestra información como la hora, la batería, 
+        la conexión de red, entre otros detalles.
     AppLoading:
         Componente de Expo que ayuda a mostrar una pantalla de carga mientras se 
         cargan los recursos de la aplicación, como fuentes o imágenes.
