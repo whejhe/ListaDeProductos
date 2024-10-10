@@ -9,6 +9,7 @@ module.exports = {
       {
         singleQuote: false, // Permitir tanto comillas simples como dobles
         endOfLine: "auto",
+        parser: "flow",
       },
     ],
   },

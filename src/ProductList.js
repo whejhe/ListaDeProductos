@@ -27,7 +27,9 @@ export default function ProductList({ navigation }) {
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollContent}>
+      <ScrollView style={styles.scrollView}
+        contentContainerStyle={styles.contentStyles}
+      >
         {productos.map(producto => (
           <Pressable
             key={producto.id}
@@ -73,13 +75,13 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 15,
   },
-  scrollContent: {
-    flexGrow: 1,
-    justifyContent: "center",
-    paddingBottom: 20,
-  },
   scrollView: {
     flex: 1,
     width: "100%",
+    flexGrow: 1,
+    paddingBottom: 20,
+  },
+  contentStyles: {
+    justifyContent: "center",
   },
 });
